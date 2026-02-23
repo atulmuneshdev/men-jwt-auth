@@ -87,4 +87,6 @@ Protected Routes
 → Middleware Verifies JWT
 → Access Granted
 
+--------------------------------------------------------------------
+🔒 Authentication Middleware
 
