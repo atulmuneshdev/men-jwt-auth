@@ -90,24 +90,24 @@ Protected Routes
 ---------------------------------------------------------------------------------------------------------
 🔒 Authentication Middleware
 
-           const jwt = require("jsonwebtoken");
+                         const jwt = require("jsonwebtoken");
+                         const authMiddleware = (req, res, next) => {
+                                   try {
+                                         const token = req.cookies.token;
+                                         if (!token) {
+                                         return res.status(401).json({ message: "Unauthorized access" });
+                                       }
 
-         const authMiddleware = (req, res, next) => {
-        try {
-    const token = req.cookies.token;
-    if (!token) {
-      return res.status(401).json({ message: "Unauthorized access" });
-    }
+                                          const decoded = jwt.verify(token, process.env.JWT_TOKEN)
+                                          req.userId = decoded.id;
+                                         next();
+                                  } catch (error) {
+                                     return res.status(401).json({ message: "Invalid or expired token" });
+                             }
+                       };
 
-    const decoded = jwt.verify(token, process.env.JWT_TOKEN);
-    req.userId = decoded.id;
+                     module.exports = authMiddleware;
 
-    next();
-    } catch (error) {
-    return res.status(401).json({ message: "Invalid or expired token" });
-    }
-    };
 
-     module.exports = authMiddleware;
 
 
