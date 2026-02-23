@@ -26,30 +26,21 @@ This project demonstrates real-world authentication and authorization patterns u
 🛠 Tech Stack
 
 Backend
-
-Node.js
-
-Express.js
+   .Node.js
+   .Express.js
 
 Database
-
-MongoDB
-
-Mongoose
+  .MongoDB
+  .Mongoose
 
 Security
-
-JWT (jsonwebtoken)
-
-bcrypt
-
-HTTP-only Cookies
+   .JWT (jsonwebtoken)
+   .bcrypt
+   .HTTP-only Cookies
 
 Utilities
-
-cookie-parser
-
-dotenv
+  .cookie-parser
+  .dotenv
 -------------------------------------------------------------------------------------------------------------------
 📁 Folder Structure
 mern-auth-posts/
@@ -77,5 +68,23 @@ mern-auth-posts/
 ├── app.js
 ├── server.js
 └── package.json
+
+-----------------------------------------------------------------------
+🔄 Authentication Workflow
+
+User Register
+→ Password Hashed (bcrypt)
+→ User Stored in DB
+
+User Login
+→ Password Verified
+→ JWT Generated
+
+JWT
+→ Stored in HTTP-only Cookie
+
+Protected Routes
+→ Middleware Verifies JWT
+→ Access Granted
 
 
