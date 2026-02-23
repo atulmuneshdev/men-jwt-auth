@@ -22,7 +22,36 @@ This project demonstrates real-world authentication and authorization patterns u
 ⛔ Authorization (Owner-only Update/Delete)
 
 📦 Scalable MVC Architecture
+----------------------------------------------------------------------------------------------------------
+🛠 Tech Stack
+
+Backend
+
+Node.js
+
+Express.js
+
+Database
+
+MongoDB
+
+Mongoose
+
+Security
+
+JWT (jsonwebtoken)
+
+bcrypt
+
+HTTP-only Cookies
+
+Utilities
+
+cookie-parser
+
+dotenv
 -------------------------------------------------------------------------------------------------------------------
+📁 Folder Structure
 mern-auth-posts/
 │
 ├── controllers/
